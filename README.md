@@ -1,36 +1,118 @@
-# Challenge Alura Store: Análisis de Rendimiento Comercial
+# 🏪 Alura Store — Análisis de Rendimiento por Sucursal
 
-## Descripción del Proyecto
-Este repositorio contiene el código y la documentación del proyecto "Challenge Alura Store", enfocado en la aplicación práctica de Ciencia de Datos. El objetivo principal es realizar un Análisis Exploratorio de Datos (EDA) sobre las métricas comerciales y operativas de cuatro sucursales de una cadena de retail para fundamentar decisiones corporativas estratégicas, incluida la posible reestructuración o venta de alguna de las tiendas.
+> Challenge de Data Science | Alura LATAM
 
-## Estructura del Repositorio
-* `CHALLENGE_ALURA_STOREpynb.ipynb`: Notebook de Jupyter que contiene el código fuente, el análisis de datos mediante Pandas y las visualizaciones generadas con Matplotlib.
-* Archivos de datos (`Tienda1.csv`, `Tienda2.csv`, `Tienda3.csv`, `Tienda4.csv`): Conjuntos de datos base con los registros de ventas, categorías de productos, costos de envío y calificaciones de satisfacción del cliente. *(Nota: Estos archivos deben ubicarse en el mismo directorio que el notebook para su correcta ejecución).*
+---
 
-## Tecnologías y Herramientas
-* **Lenguaje:** Python 3
-* **Manipulación y Análisis de Datos:** Pandas
-* **Visualización de Datos:** Matplotlib
-* **Entorno de Desarrollo:** Jupyter Notebook / Google Colab
+## 📋 Descripción del Proyecto
 
-## Metodología del Análisis
-El flujo de trabajo documentado en el notebook sigue estas fases:
-1. **Importación y Exploración Inicial:** Carga de los archivos CSV y revisión de las estructuras de los *DataFrames*.
-2. **Análisis de Facturación:** Cálculo del volumen total de ingresos generados por cada sucursal.
-3. **Ventas por Categoría:** Identificación de los volúmenes de rotación por tipo de producto (destacando el dominio de la categoría "Muebles").
-4. **Calificación Promedio:** Evaluación del nivel de satisfacción del cliente en una escala de 0 a 5.
-5. **Productos Extremos:** Extracción automatizada de los artículos con mayor y menor volumen de ventas por locación.
-6. **Análisis Logístico:** Cálculo de los costos promedio de envío asumidos por cada sucursal.
-7. **Visualización:** Representación gráfica de los hallazgos mediante gráficos de barras y líneas para facilitar la toma de decisiones.
+Este proyecto realiza un **análisis exploratorio de datos (EDA)** sobre las cuatro sucursales de **Alura Store** con el objetivo de evaluar su rendimiento comercial, logístico y de satisfacción al cliente. El análisis busca identificar qué tienda debería considerarse para cierre o venta, basándose en datos concretos.
 
-## Principales Conclusiones (Insights)
-* **Rendimiento Financiero:** La Tienda 1 es el activo de mayor recaudación (~$1.15 mil millones). En contraste, la Tienda 4 registra el menor volumen comercial (~$1.03 mil millones), posicionándose como la principal candidata a venta si el criterio corporativo es estrictamente financiero.
-* **Paradoja Operativa (Riesgo en Tienda 1):** A pesar de su liderazgo en ingresos, la Tienda 1 refleja saturación operativa: asume los costos promedio de envío más altos ($26,018.61) y presenta el índice de satisfacción al cliente más bajo de la cadena (3.98/5). 
-* **Patrón de Consumo:** La categoría "Muebles" es transversalmente el motor principal de ventas, sin embargo, la demanda específica varía demográficamente (ej. el producto estrella en la Tienda 2 es el curso "Iniciando en programación").
+---
 
-## Instrucciones de Ejecución (Setup)
-Para reproducir este análisis en un entorno local, ejecuta los siguientes comandos en tu terminal:
+## 🎯 Objetivo
 
-1. Clona este repositorio:
-   ```bash
-   git clone <INSERTA_AQUI_LA_URL_DE_TU_REPOSITORIO>
+Evaluar el rendimiento de cada sucursal de Alura Store y emitir una recomendación fundamentada en datos sobre cuál debería cerrarse o venderse.
+
+---
+
+## 📁 Estructura del Proyecto
+```
+Alura_store_challenge/
+│
+├── CHALLENGE_ALURA_STOREpynb.ipynb  # Notebook principal con el análisis completo
+└── README.md
+```
+
+---
+
+## 🗃️ Dataset
+
+- **Fuente:** [Alura Cursos — GitHub](https://github.com/alura-es-cursos/challenge1-data-science-latam)
+- **Formato:** 4 archivos CSV (uno por tienda)
+- **Tiendas analizadas:** Tienda 1, Tienda 2, Tienda 3, Tienda 4
+
+### Variables del Dataset
+
+| Variable | Descripción |
+|---|---|
+| `Producto` | Nombre del producto vendido |
+| `Categoría del Producto` | Categoría a la que pertenece el producto |
+| `Precio` | Precio de venta del producto |
+| `Costo de envío` | Costo logístico asociado al envío |
+| `Calificación` | Puntuación de satisfacción del cliente (0–5) |
+
+---
+
+## 🔍 Análisis Realizado
+
+### 1. 💰 Facturación por Tienda
+Suma total de ingresos por precio de productos vendidos en cada sucursal.
+
+### 2. 📦 Ventas por Categoría
+Conteo de productos vendidos por categoría en cada tienda, identificando las categorías más y menos demandadas.
+
+### 3. ⭐ Calificación Promedio
+Promedio de la satisfacción de los clientes por tienda, en escala de 0 a 5.
+
+### 4. 🏆 Productos Más y Menos Vendidos
+Identificación de los productos con mayor y menor volumen de ventas en cada sucursal.
+
+### 5. 🚚 Costo Promedio de Envío
+Costo logístico promedio por tienda, analizado en relación con el volumen de facturación.
+
+---
+
+## 📊 Resultados
+
+### Facturación y Costos de Envío
+
+| Tienda | Facturación | Costo Promedio de Envío |
+|---|---|---|
+| Tienda 1 | $1,150,880,400 ⬆️ más alta | $26,018.61 ⬆️ más alto |
+| Tienda 2 | $1,116,343,500 | $25,216.24 |
+| Tienda 3 | $1,098,019,600 | $24,805.68 |
+| Tienda 4 | $1,038,375,700 ⬇️ más baja | $23,472.48 ⬇️ más bajo |
+
+> Se observa correlación directa entre facturación y costo de envío: mayor volumen de ventas implica mayor costo logístico.
+
+### Visualizaciones Generadas
+- 📊 Gráfico de barras: Facturación por tienda
+- 📈 Gráfico de líneas: Nivel de satisfacción de clientes por tienda
+- 📊 Gráfico de barras horizontales: Costos promedio de envío
+
+---
+
+## 💡 Conclusión y Recomendación
+
+Tras el análisis de facturación, satisfacción, categorías de productos y costos logísticos, se concluye que la **Tienda 4** es la candidata recomendada para cierre o venta, al presentar:
+
+- La **facturación más baja** de las cuatro sucursales
+- El **menor volumen de ventas** en categorías clave
+- Una relación costo-ingreso menos favorable comparada con el resto
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+- **Python 3**
+- **Pandas** — Carga y análisis de datos
+- **Matplotlib** — Visualizaciones
+- **Google Colab** — Entorno de ejecución
+
+---
+
+## ▶️ Cómo Ejecutar
+
+Abre el notebook directamente en Google Colab:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/luceroabanto04-commits/Alura_store_challenge/blob/main/CHALLENGE_ALURA_STOREpynb.ipynb)
+
+Los datasets se cargan automáticamente desde GitHub, no necesitas descargar nada.
+
+---
+
+## 👩‍💻 Autora
+
+**Lucero Abanto**  
+Challenge Data Science — Alura LATAM
